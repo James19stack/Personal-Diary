@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>My Diary</h1>
+  <hr>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div *ngFor='let diary of diaries;let i = index'>
+        <div>
+          <h4 id={{i}} appStrikethrough></h4>
+          <button (click)='showDetails(i)' class="btn btn-primary">Show Details</button>
+        </div>
+
+        <div *ngIf='diary.showDescription'>
+          <app-diary-detail  [diary]='diary' (isComplete) = 'deleteDiary($event,i)'></app-diary-detail> 
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <app-diary-form (addDiary)="addNewDiary($event)"></app-diary-form><br>
+    </div>
+  </div>  
+</div>
