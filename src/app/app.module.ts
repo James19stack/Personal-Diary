@@ -1,12 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DiaryComponent } from './diary/diary.component';
 import { DiaryDetailsComponent } from './diary-details/diary-details.component';
 import { StrikethroughDirective } from './strikethrough.directive';
-import { GoalFormComponent } from './goal-form/goal-form.component';
 import { DiaryFormComponent } from './diary-form/diary-form.component';
 
 @NgModule({
@@ -15,12 +15,11 @@ import { DiaryFormComponent } from './diary-form/diary-form.component';
     DiaryComponent,
     DiaryDetailsComponent,
     StrikethroughDirective,
-    GoalFormComponent,
     DiaryFormComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Diary } from '../diary';
 
 @Component({
@@ -23,13 +23,8 @@ export class DiaryComponent implements OnInit {
   showDetails(index){
     this.diaries[index].showDescription = !this.diaries[index].showDescription;
   }
-  completeDiary(isComplete, index){
-    if (isComplete) {
-      this.diaries.splice(index,1);
-    }
-  }
-  deleteDiary(isComplete, index){
-    if (isComplete) {
+  diaryDelete(isDelete, index){
+    if (isDelete ) {
       let toDelete = confirm(`Are you sure you want to delete ${this.diaries[index].title}?`)
 
       if (toDelete){
